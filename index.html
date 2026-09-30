@@ -5,27 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meu Portifólio</title>
 
-<!-- Fontes do Google Fonts: uma serifada (títulos) e uma normal (textos) -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-  /* ===== CORES DO SITE =====
-     Deixei todas as cores aqui em cima. Se quiser trocar alguma,
-     só mudar o valor hexadecimal (o código tipo #171320) */
+  
   :root{
-    --bg: #171320;          /* fundo da página (roxo bem escuro) */
-    --card: #241E30;        /* fundo dos blocos/caixas */
-    --texto: #EEEAF6;       /* cor do texto principal (quase branco) */
-    --texto-suave: #A79FC0; /* cor do texto secundário (cinza arroxeado) */
-    --dourado: #F2B441;     /* cor de destaque 1 */
-    --lilas: #9A96F5;       /* cor de destaque 2 */
-    --borda: #362E45;       /* cor das bordas dos blocos */
+    --bg: #171320;        
+    --card: #241E30;      
+    --texto: #EEEAF6;      
+    --texto-suave: #A79FC0; 
+    --dourado: #F2B441;    
+    --lilas: #9A96F5;     
+    --borda: #362E45;       
   }
 
-  /* reset simples: tira espaçamentos padrão do navegador */
-  *{
+ 
+  {
     box-sizing: border-box;
   }
 
@@ -36,19 +34,19 @@
     font-family: 'Inter', sans-serif;
   }
 
-  /* títulos usam a fonte serifada */
+  
   h1, h3{
     font-family: 'Fraunces', serif;
   }
 
-  /* container central: limita a largura do conteúdo e centraliza */
+ 
   .container{
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px 60px 20px;
   }
 
-  /* ===== MENU DE NAVEGAÇÃO (topo) ===== */
+ 
   .menu{
     display: flex;
     justify-content: center;
@@ -64,31 +62,31 @@
     border-radius: 20px;
   }
 
-  /* quando passa o mouse/dedo em cima do link do menu */
+
   .menu a:hover{
     background-color: var(--card);
     color: var(--texto);
   }
 
-  /* ===== CABEÇALHO (HERO) ===== */
+
   .cabecalho{
     background-color: var(--card);
     border: 1px solid var(--borda);
     border-radius: 24px;
     padding: 48px 28px;
     margin-bottom: 40px;
-    position: relative; /* precisa disso pra foto se posicionar em relação a esse bloco */
+    position: relative; 
   }
 
-  /* foto no cantinho superior direito do cabeçalho */
+ 
   .foto-perfil{
     position: absolute;
     top: 24px;
     right: 24px;
     width: 72px;
     height: 72px;
-    border-radius: 50%;   /* deixa a foto redonda */
-    object-fit: cover;    /* corta a foto sem distorcer */
+    border-radius: 50%;   
+    object-fit: cover;    
     border: 2px solid var(--dourado);
   }
 
@@ -116,7 +114,7 @@
     max-width: 500px;
   }
 
-  /* ===== TÍTULO DE CADA SEÇÃO ===== */
+ 
   .titulo-secao{
     color: var(--texto-suave);
     font-size: 14px;
@@ -127,7 +125,7 @@
     margin-bottom: 48px;
   }
 
-  /* ===== GRADE DE BLOCOS (estilo "bento") =====
+
      Uso "grid" pra organizar os blocos lado a lado.
      Em telas pequenas eles empilham automaticamente. */
   .grade{
@@ -144,13 +142,13 @@
     transition: border-color 0.2s, transform 0.2s;
   }
 
-  /* efeito simples ao passar o mouse: sobe um pouquinho e a borda acende */
+ 
   .bloco:hover{
     border-color: var(--dourado);
     transform: translateY(-4px);
   }
 
-  /* o bloco "Sobre" ocupa as duas colunas */
+
   .bloco-sobre{
     grid-column: 1 / 3;
   }
@@ -165,7 +163,7 @@
     color: var(--texto);
   }
 
-  /* bloco do número/estatística */
+
   .numero{
     font-size: 40px;
     font-weight: 700;
@@ -179,9 +177,9 @@
     margin: 4px 0 0 0;
   }
 
-  /* ===== PROJETOS ===== */
+
   .projeto{
-    grid-column: 1 / 3; /* cada projeto ocupa a linha toda */
+    grid-column: 1 / 3;
   }
 
   .projeto-tipo{
@@ -215,7 +213,7 @@
     border-radius: 20px;
   }
 
-  /* ===== CONTATO ===== */
+  
   .contato-link{
     grid-column: span 1;
     text-decoration: none;
@@ -252,9 +250,7 @@
     font-size: 13px;
   }
 
-  /* ===== TELAS PEQUENAS (celular) =====
-     Em telas até 600px de largura, o "Sobre" e o número
-     ficam um embaixo do outro em vez de lado a lado. */
+ 
   @media (max-width: 600px){
     .grade{
       grid-template-columns: 1fr;
@@ -265,7 +261,7 @@
     .cabecalho h1{
       font-size: 36px;
     }
-    /* no celular, a foto sai do canto e fica em cima do texto, centralizada */
+
     .foto-perfil{
       position: static;
       display: block;
@@ -278,14 +274,14 @@
 
 <div class="container">
 
-  <!-- MENU -->
+
   <nav class="menu">
     <a href="#sobre">Sobre</a>
     <a href="#projetos">Projetos</a>
     <a href="#contato">Contato</a>
   </nav>
 
-  <!-- CABEÇALHO -->
+
   <header class="cabecalho">
     <img src="minha-foto.jpg" alt="Foto de Pedro" class="foto-perfil">
     <p class="legenda">Pedro</p>
@@ -293,7 +289,7 @@
     <p>Estudante explorando automação, programação e o ponto onde as duas se encontram com empreendedorismo.</p>
   </header>
 
-  <!-- SOBRE -->
+
   <section id="sobre">
     <p class="titulo-secao">Sobre</p>
     <div class="grade">
@@ -308,7 +304,7 @@
     </div>
   </section>
 
-  <!-- PROJETOS -->
+
   <section id="projetos">
     <p class="titulo-secao">Projetos</p>
     <div class="grade">
@@ -341,8 +337,7 @@
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato">
+    <section id="contato">
     <p class="titulo-secao">Contato</p>
     <div class="grade">
 
